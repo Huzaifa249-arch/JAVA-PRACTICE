@@ -1,0 +1,245 @@
+INTERFACE,ABSTRACT,EXCEPTION
+INTERFACE
+interface RemoteControl {
+    void powerOn();
+    void powerOff();
+    void increaseVolume();
+    void decreaseVolume();
+}
+class TV implements RemoteControl {
+    @Override
+    public void powerOn() {
+        System.out.println("TV is now ON.");
+    }
+    @Override
+    public void powerOff() {
+        System.out.println("TV is now OFF.");
+    }
+    @Override
+    public void increaseVolume() {
+        System.out.println("TV volume increased.");
+    }
+    @Override
+    public void decreaseVolume() {
+        System.out.println("TV volume decreased.");
+    }
+}
+class AC implements RemoteControl {
+    @Override
+    public void powerOn() {
+        System.out.println("AC is now ON.");
+    }
+    @Override
+    public void powerOff() {
+        System.out.println("AC is now OFF.");
+    }
+    @Override
+    public void increaseVolume() {
+        System.out.println("AC cooling increased.");
+    }
+    @Override
+    public void decreaseVolume() {
+        System.out.println("AC cooling decreased.");
+    }
+}
+class Speaker implements RemoteControl {
+    @Override
+    public void powerOn() {
+        System.out.println("Speaker is now ON.");
+    }
+    @Override
+    public void powerOff() {
+        System.out.println("Speaker is now OFF.");
+    }
+    @Override
+    public void increaseVolume() {
+        System.out.println("Speaker volume increased.");
+    }
+    @Override
+    public void decreaseVolume() {
+        System.out.println("Speaker volume decreased.");
+    }
+}
+public class SmartDeviceDemo {
+    public static void main(String[] args) {
+        RemoteControl device;
+        System.out.println("=== TV Control ===");
+        device = new TV();
+        device.powerOn();
+        device.increaseVolume();
+        device.decreaseVolume();
+        device.powerOff();
+        System.out.println("=== AC Control ===");
+        device = new AC();
+        device.powerOn();
+        device.increaseVolume();
+        device.decreaseVolume();
+        device.powerOff();
+        System.out.println("=== Speaker Control ===");
+        device = new Speaker();
+        device.powerOn();
+        device.increaseVolume();
+        device.decreaseVolume();
+        device.powerOff();
+    }
+}
+ABSTRACT
+import java.util.Scanner;
+// Abstract class Media
+abstract class Media {
+    String title;
+    String creator;
+    int duration; // for movies and songs
+    Scanner sc = new Scanner(System.in);
+    // Abstract method to print details
+    abstract void printDetails();
+}
+// Subclass Book
+class Book extends Media {
+    int pages;
+    public void inputDetails() {
+        System.out.println("Entering Book Details...");
+        System.out.print("Enter Book Title: ");
+        title = sc.nextLine();
+        System.out.print("Enter Author Name: ");
+        creator = sc.nextLine();
+        System.out.print("Enter Number of Pages: ");
+        pages = sc.nextInt();
+        sc.nextLine(); // consume newline
+    }
+    @Override
+    void printDetails() {
+        System.out.println("Book - Title: " + title + ", Author: " + creator + ", Pages: " + pages);
+    }
+}
+// Subclass Movie
+class Movie extends Media {
+    public void inputDetails() {
+        System.out.println("Entering Movie Details...");
+        System.out.print("Enter Movie Title: ");
+        title = sc.nextLine();
+        System.out.print("Enter Director Name: ");
+        creator = sc.nextLine();
+        System.out.print("Enter Duration (in minutes): ");
+        duration = sc.nextInt();
+        sc.nextLine();
+    }
+    @Override
+    void printDetails() {
+        System.out.println("Movie - Title: " + title + ", Director: " + creator + ", Duration: " + duration + " mins");
+    }
+}
+
+// Subclass Song
+class Song extends Media {
+    public void inputDetails() {
+        System.out.println("Entering Song Details...");
+        System.out.print("Enter Song Title: ");
+        title = sc.nextLine();
+        System.out.print("Enter Singer Name: ");
+        creator = sc.nextLine();
+        System.out.print("Enter Duration (in minutes): ");
+        duration = sc.nextInt();
+        sc.nextLine(); // consume newline
+    }
+    @Override
+    void printDetails() {
+        System.out.println("Song - Title: " + title + ", Singer: " + creator + ", Duration: " + duration + " mins");
+    }
+}
+public class AbstractMediaDemo {
+    public static void main(String[] args) {
+        Media media;
+        Book book = new Book();
+        book.inputDetails();
+        media = book;
+        media.printDetails();
+        Movie movie = new Movie();
+        movie.inputDetails();
+        media = movie; 
+        media.printDetails();
+        Song song = new Song();
+        song.inputDetails();
+        media = song;
+        media.printDetails();
+    }
+}
+EXCEPTION
+1.Arithmeric exception
+import java.util.Scanner;
+public class ArithmeticExceptionDemo {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        try {
+            System.out.print("Enter numerator: ");
+            int numerator = sc.nextInt()
+            System.out.print("Enter denominator: ");
+            int denominator = sc.nextInt();
+            int result = numerator / denominator;
+            System.out.println("Result = " + result);
+        } catch (ArithmeticException e) {
+            System.out.println("Error: Division by zero is not allowed");
+        }
+        System.out.println("Program continues smoothly...");
+    }
+}
+2.//Nullpointerexception
+public class NullPointerExceptionDemo {
+    public static void main(String[] args) {
+        String str = null;
+        try {
+            System.out.println("Length of the string: " + str.length());
+        } catch (NullPointerException e) {
+            System.out.println("Error: Cannot access methods of a null object");
+        }
+        System.out.println("Program continues smoothly...");
+    }
+}
+3.//Array index out of bounds exception
+import java.util.Scanner;
+public class ArrayIndexOutOfBoundsExceptionDemo {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int[] arr = {10, 20, 30};
+        try {
+            System.out.print("Enter index to access: ");
+            int index = sc.nextInt();
+            System.out.println("Element at index " + index + " is " + arr[index]);
+        } catch (ArrayIndexOutOfBoundsException e) {
+            System.out.println("Error: Invalid array index accessed");
+        }
+        System.out.println("Program continues smoothly...");
+    }
+}
+4.Number format exception
+import java.util.Scanner;
+public class NumberFormatExceptionDemo {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        try {
+            System.out.print("Enter a number: ");
+            String input = sc.nextLine();
+            int number = Integer.parseInt(input);
+            System.out.println("You entered: " + number);
+        } catch (NumberFormatException e) {
+            System.out.println("Error: Invalid number format");
+        }
+        System.out.println("Program continues smoothly...");
+    }
+}
+5.Class cast exception
+public class ClassCastExceptionDemo {
+    public static void main(String[] args) {
+        Object obj = new Integer(100);
+        try {
+            String str = (String) obj;
+            System.out.println(str);
+        } catch (ClassCastException e) {
+            System.out.println("Error: Invalid type casting attempted");
+        }
+        System.out.println("Program continues smoothly...");
+    }
+}
+
+
+

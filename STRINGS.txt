@@ -1,0 +1,176 @@
+STRINGS
+1.REVERSE STRING
+import java.util.Scanner;
+public class ReverseString {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        String s = sc.nextLine();
+        char[] arr = s.toCharArray();
+        int start = 0;
+        int end = arr.length - 1;
+        while (start < end) {
+            char temp = arr[start];
+            arr[start] = arr[end];
+            arr[end] = temp;
+            start++;
+            end--;
+        for (char c : arr) {
+            System.out.print(c);
+        }
+        System.out.println();
+    }
+}
+2.ODD EVEN INDEX
+import java.util.Scanner;
+public class OddEvenIndices {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        String s = sc.nextLine();
+        for (int i = 1; i < s.length(); i += 2) {
+            System.out.print(s.charAt(i));
+        }
+                for (int i = 0; i < s.length(); i += 2) {
+            System.out.print(s.charAt(i));
+        }
+        System.out.println();
+    }
+}
+3.OCCURENCE OF A CHARACTER
+import java.util.Scanner;
+public class CharacterCount {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        String s = sc.nextLine();
+        char ch = sc.nextLine().charAt(0);
+        int count = 0;
+        for (int i = 0; i < s.length(); i++) {
+            if (s.charAt(i) == ch) {
+                count++;
+            }
+        }
+        System.out.println(count);
+    }
+}
+4.VOWELS IN A STRING
+import java.util.Scanner;
+public class OnlyVowels {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        String s = sc.nextLine();
+        for (int i = 0; i < s.length(); i++) {
+            char c = Character.toLowerCase(s.charAt(i));
+            if ("aeiou".indexOf(c) == -1) {
+                System.out.println("No");
+                return;
+            }
+        }
+        System.out.println("Yes");
+    }
+}
+5.DIGITS IN A STRING
+import java.util.Scanner;
+public class OnlyDigits {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        String s = sc.nextLine();
+        for (int i = 0; i < s.length(); i++) {
+            if (s.charAt(i) < '0' || s.charAt(i) > '9') {
+                System.out.println("No");
+                return;
+            }
+        }
+        System.out.println("Yes");
+    }
+}
+6.COUNT VOWELS AND CONSONANTS
+import java.util.Scanner;
+public class VowelsConsonantsCount {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        String s = sc.nextLine();
+        int vowels = 0, consonants = 0;
+        for (int i = 0; i < s.length(); i++) {
+            char c = Character.toLowerCase(s.charAt(i));
+            if (c >= 'a' && c <= 'z') {
+                if (c == 'a' || c == 'e' || c == 'i' || c == 'o' || c == 'u') {
+                    vowels++;
+                } else {
+                    consonants++;
+                }
+            }
+        }
+        System.out.println(vowels + " " + consonants);
+    }
+}
+7.TOGGLE CASE OF CHARACTERS
+import java.util.Scanner;
+public class ToggleCase {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        String s = sc.nextLine();
+        for (int i = 0; i < s.length(); i++) {
+            char c = s.charAt(i);
+            if (c >= 'a' && c <= 'z') {
+                System.out.print((char)(c - 'a' + 'A'));
+            } else if (c >= 'A' && c <= 'Z') {
+                System.out.print((char)(c - 'A' + 'a'));
+            } else {
+                System.out.print(c);
+            }
+        }
+        System.out.println();
+    }
+}
+8.NEW PALINDROME
+import java.util.Scanner;
+public class RearrangePalindrome {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int t = sc.nextInt();
+        while (t-- > 0) {
+            String s = sc.next();
+            boolean allSame = true;
+            char first = s.charAt(0);
+            for (int i = 1; i < s.length(); i++) {
+                if (s.charAt(i) != first) {
+                    allSame = false;
+                    break;
+                }
+            }
+            if (allSame) {
+                System.out.println("NO");
+            } else {
+                System.out.println("YES");
+            }
+        }
+    }
+}
+9.YES OR YES
+import java.util.Scanner;
+
+public class CheckYes {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int t = sc.nextInt();
+        while (t-- > 0) {
+            String s = sc.next();
+            if (s.equalsIgnoreCase("YES")) {
+                System.out.println("YES");
+            } else {
+                System.out.println("NO");
+            }
+        }
+    }
+}
+10.COUNT THE NUMBER OF WORDS IN A SENTENCE
+import java.util.Scanner;
+public class WordCount {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        String s = sc.nextLine();
+        sc.close();
+        String[] words = s.split(" ");
+        System.out.println(words.length);
+    }
+}
+

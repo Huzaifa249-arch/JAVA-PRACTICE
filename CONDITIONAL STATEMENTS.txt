@@ -1,0 +1,149 @@
+CONDITIONAL STATEMENTS
+1.import java.util.*;
+class Main{
+     public static void main (String[] args) {
+     for (int i=1;i<=1000;i++)
+     {
+        System.out.println("Hello World");
+     }
+  }
+ }
+2. Small, Large, Equal 
+import java.util.Scanner;
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int a = sc.nextInt();
+        int b = sc.nextInt();
+        if (a == b) {
+            System.out.println("a == b");
+        }
+        if (a < b) {
+            System.out.println("a < b");
+        }
+        if (a > b) {
+            System.out.println("a > b");
+        }
+    }
+}
+3. Divide the Apples
+ import java.util.Scanner;
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int ni = sc.nextInt();
+        int ki = sc.nextInt();
+        System.out.println(ki % ni);
+    }
+}
+4. Fever
+import java.util.*;
+class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int T = sc.nextInt();
+        while (T-- > 0) {
+            int X = sc.nextInt();
+            System.out.println((X - 98 > 0) ? "YES" : "NO");
+        }
+    }
+}
+5.Lunch Time
+import java.util.*;
+class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int T = sc.nextInt();
+        while (T-- > 0) {
+            int X = sc.nextInt();
+            System.out.println((X - 98 > 0) ? "YES" : "NO");
+        }
+    }
+}
+6. It is hot or cold
+import java.util.Scanner;
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int T = sc.nextInt();
+        while (T-- > 0) {
+            int C = sc.nextInt(); 
+            if (C > 20) {
+                System.out.println("HOT");
+            } else {
+                System.out.println("COLD");
+            }
+        }
+    }
+}
+7. Discount
+ import java.util.*;
+class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int T = sc.nextInt();
+        while (T-- > 0) {
+            System.out.println(100 - sc.nextInt());
+        }
+    }
+}
+
+8. N-TV Discount
+import java.util.Scanner;
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int T = sc.nextInt();
+        while (T-- > 0) {
+            int A = sc.nextInt();
+            int B = sc.nextInt();
+            int C = sc.nextInt();
+            int D = sc.nextInt();
+            int priceFirst = A - C;
+            int priceSecond = B - D;            
+            if (priceFirst < priceSecond) {
+                System.out.println("First");
+            } else if (priceSecond < priceFirst) {
+                System.out.println("Second");
+            } else {
+                System.out.println("Any");
+            }
+        }
+    }
+}
+9. O-Battery Low
+import java.util.Scanner;
+public class Main{
+    public static void main(String[] args){
+        Scanner sc=new Scanner(System.in);
+        int T=sc.nextInt();
+        while(T-->0){
+            int X=sc.nextInt();
+            if (X<=15){
+            System.out.println("YES");
+            }else{
+                System.out.println("NO");
+            }
+        }
+        sc.close();
+    }
+}
+10. P- Chef and Candies
+import java.util.Scanner;
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int T = sc.nextInt();
+        while (T-- > 0) {
+            int N = sc.nextInt();
+            int X = sc.nextInt();
+            if (X >= N) {
+                System.out.println(0);
+            } else {
+                int needed = N - X;
+                int packets = (needed + 3) / 4;
+                System.out.println(packets);
+            }
+        }
+    }
+}
